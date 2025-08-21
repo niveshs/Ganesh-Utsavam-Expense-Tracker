@@ -70,7 +70,7 @@
             <th>Amount</th>
         </tr>
     </thead>
-    <tbody id="expenseTableBody">
+    <tbody id="expenseTable">
 		<tr>
             <td>Pandhiri</td>
             <td>01</td>
@@ -126,7 +126,7 @@
         let totalExpenses = 0;
 
         // Calculate total expenses
-        const rows = document.querySelectorAll('#expenseTableBody tr');
+        const rows = document.querySelectorAll('#expenseTable tr');
         rows.forEach(row => {
             const expenseAmount = parseFloat(row.cells[1].textContent.replace('$', ''));
             totalExpenses += expenseAmount;
