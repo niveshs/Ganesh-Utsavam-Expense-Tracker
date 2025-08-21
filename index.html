@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinayaka Chavithi 2025 GMC-Expense Tracker</title>
+	<link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total-amount, .remaining-amount {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">Vinayaka Chavithi 2025 - GM Complex</h1>
+<h2 align="center">Expense Tracker</h1>
+
+    <div class="table-container">
+        <table class="overview-table">
+		<tbody id="overviewTableBody">
+	<tr>
+            <td>Chandha Amount</td>
+            <td><span id="ca" </span></td>
+	</tr>
+	<tr>
+            <td>Laddoo Amount</td>
+            <td><span id="la" </span></td>
+        </tr>
+        <tr>
+            <td><strong>Total Amount</strong></td>
+            <td><strong><span id="ta" </span></strong></td>
+        </tr>
+	<tr>
+            <td>Spent Amount</td>
+            <td><span id="sa" </span></td>
+        </tr>
+        <tr>
+            <td><strong>Remaining Amount</strong></td>
+            <td><strong><span id="ra" </span></strong</td>
+        </tr>
+		</tbody>
+        </table>
+    </div>
+
+<h2>Expenses</h2>
+
+<table class="expense-table">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody id="expenseTableBody">
+		<tr>
+            <td>Pandhiri</td>
+            <td>0</td>
+        </tr>
+		<tr>
+            <td>Band</td>
+            <td>0</td>
+        </tr>
+		<tr>
+            <td>Nimajjanam Food</td>
+            <td>0</td>
+        </tr>
+		<tr>
+            <td>Laddoo</td>
+            <td>0</td>
+        </tr>
+	    	<tr>
+            <td>Dry Fruits for Laddoo</td>
+            <td>0</td>
+        </tr>
+		<tr>
+            <td>Crackers</td>
+            <td>0</td>
+        </tr>
+		<tr>
+            <td>Decoration Lights</td>
+            <td>5200</td>
+        </tr>
+		 <tr>
+        <tr>
+            <td>Vigraham Transport</td>
+            <td>0</td>
+        </tr>
+	  <tr>
+            <td>Gaja Maala</td>
+            <td>0</td>
+        </tr>
+	<tr>
+            <td>Prasadam cups</td>
+            <td>0</td>
+        </tr>
+	
+    </tbody>
+</table>
+
+<script>
+        const chandhaAmount = 57000; // Example total amount available
+		document.getElementById("ca").innerHTML = chandhaAmount;
+	const laddooAmount = 0; // Example total amount available
+		document.getElementById("la").innerHTML = laddooAmount;
+	const totalAmount = chandhaAmount + laddooAmount; // Example total amount available
+		document.getElementById("ta").innerHTML = totalAmount;
+        let totalExpenses = 0;
+
+        // Calculate total expenses
+        const rows = document.querySelectorAll('#expenseTableBody tr');
+        rows.forEach(row => {
+            const expenseAmount = parseFloat(row.cells[1].textContent.replace('$', ''));
+            totalExpenses += expenseAmount;
+        });
+	document.getElementById("sa").innerHTML = totalExpenses;
+        document.getElementById("ra").innerHTML = totalAmount - totalExpenses;
+
+</script>
+
+</body>
+</html>
